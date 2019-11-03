@@ -1,0 +1,44 @@
+<!-- 객체, 함수 정리-->
+
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Test</title>
+
+    <script>
+
+        var a = { //객체
+            b : 123,
+            c : function(q){
+                alert(this.b + ' 이 ' + q + '를 가지고 들어왔습니다')
+            }
+        };
+        
+        function Test(){ //생성자 함수
+            this.이름 = '나',
+            나이 = 26;
+        
+            this.나이 = function(){return 나이};
+        };
+        
+        var mine = new Test; //생성자 함수 선언
+        
+        alert(mine.나이())
+        alert(mine.이름)
+        alert(Test.이름)
+        
+        a.c('cc')
+        
+        </script>
+</head>
+
+<body>
+솔솔~<br>
+나 이거 하구 있었어!ㅋㅋ
+</body>
+</html>

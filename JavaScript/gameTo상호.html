@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>to 돌아상호 from JC</title>
+
+<script>
+window.onload = function(){
+                var header = document.createElement('h1');
+                var textNode = document.createTextNode('게임은 내가 조금 더 공부한 다음에 하자');
+
+            header.appendChild(textNode);
+            document.body.appendChild(header);
+};
+
+var accept = confirm('친구의 선물을 받아보시겠습니까?(아마 수락하는게 좋을거야)');
+alert(accept);
+
+if(accept == 0){
+    while(true){
+        var reAccept = confirm('수락하라니까?');
+        alert(reAccept);
+        if(reAccept == 1)
+        break;
+        
+        else if(reAccept == 0){
+            continue;
+        }
+    }
+}
+
+var str = prompt('이 웹페이지의 제목을 쓰면 돼', '왼쪽 맨 위에');
+
+if(str.indexOf('to 돌아상호 from JC') != -1)
+alert('두번째 관문 통과');
+
+else{
+    while(true){
+        var reStr = prompt('제대로 쓰길 바란다ㅋㅋㅋ', '왼쪽 맨 위에');
+        if(reStr.indexOf('to 돌아상호 from JC') != -1){
+            alert('두번째 관문 통과');
+            break;
+        }
+        else
+        continue;
+    }
+}
+
+var date = new Date();
+alert(date);
+date.setDate(date.getFullYear() + 1);
+alert('지금부터 5년 후의 시간(우리 31살ㅋㅋㅋㅋㅋㅋㅋㅋㅋ) : ' + date);
+
+alert('자, 이제 게임을 시작하지');
+
+</script>
+</head>
+
+<body>
+    <script>
+    /*
+        //텍스트 출력
+            window.onload = function(){
+            
+            //이미지 출력
+            var img = document.createElement('img');
+            img.src = 'image.JPG';
+            img.width = 500;
+            img.height = 350;
+
+            document.body.appendChild(img);
+
+            //문자열 출력
+            var output = '';
+            output += '<ul>'; //띄어쓰기
+            output += '<li>JavaScript</li>';
+            output += 'jQuery';
+            output += '<li>Ajax</li>';
+            output += '</ul>';
+            document.body.innerHTML = output;
+
+            document.body.innerHTML += '<h1>Documnet Object Model</h1>';
+            };
+            */
+            </script>
+</body>
+</html>

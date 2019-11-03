@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>테스트</title>
+
+<script>
+
+var a = 1 //power함수
+var b = 1 //multiply 함수
+
+function power(){
+    if(arguments.length == 1){
+        a = arguments[0] * arguments[0];
+        return a;
+    }
+
+    else if(arguments.length == 2){
+        for(var i = 0; i<arguments[1]; i++){
+            a = a * arguments[0];
+        }
+        return a;
+    }
+    else
+    alert('매개변수를 1개 또는 2개만 입력하세요')
+}
+
+power(5, 2);
+
+alert(a);
+
+function multiply(){
+    for(var i = 0; i<arguments.length; i++){
+        b = b * arguments[i]
+    }
+
+    return b;
+}
+
+multiply(1, 2, 3, 4, 5);
+
+alert(b);
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+</html>

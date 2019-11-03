@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LoginEx</title>
+
+    <script src="jquery-3.3.1.js"></script><!--jQuery-->
+
+    <script>
+        $.noConflict();
+        var J = jQuery;
+
+        J(function () {
+            J('#my-form').submit(function(event){
+                var pass = document.getElementById('pass').value;
+                var passCheck = document.getElementById('pass-check').value;
+
+                var name = J('#name').val();
+                var password = J('#pass').val();
+
+                if (pass == passCheck) {
+                    alert('회원가입 완료');
+                    alert('ID: ' + name + ', Password: ' + password);
+                }
+
+                else {
+                    alert('비밀번호가 일치하지 않습니다');
+                    return false;
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <form id="my-form">
+        <table>
+            <tr>
+            <td for="name">이름: </td> <!-- for->id와 연결 -->
+            <td><input type="text" name="name" id="name" /></td><!-- name->다음 페이지로 정보 넘김 -->
+        </tr>
+        </table>
+        <br>
+
+        <label for="pass">비밀번호</label><br />
+        <input type="password" name="pass" id="pass" /><br>
+
+        <label for="pass-check">비밀번호 확인</label><br>
+        <input type="password" id="pass-check" /><br />
+
+        <input type="submit" value="확인" />
+    </form>
+</body>
+
+</html>

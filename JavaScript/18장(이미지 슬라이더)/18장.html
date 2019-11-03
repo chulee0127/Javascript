@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이미지 슬라이더</title>
+
+    <style>
+        #first{
+            color: wheat;    
+        }
+        #five{
+            color: orange;
+        }
+        .high-light-0{color: orange; }
+        .high-light-1{color: white; }
+        .high-light-2{color: red; }
+        .high-light-3{color: blue; }
+        .high-light-4{color: greenyellow; }
+
+
+        * {margin: 0px; padding: 0px;}
+        .animation_canvas {
+            overflow: hidden;
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+
+
+        .slider_panel {
+            width: 3000px;
+            position: relative;
+        }
+        .slider_image {
+            float: left;
+            width: 600px;
+            height: 400px;
+        }
+
+
+        .slider_text_panel {
+            position: absolute;
+            top: 200px; /*문자열의 높이 조정*/
+            left: 50px;
+        }
+        .slider_text {
+            position: absolute;
+            width: 300px; /*글씨 배경의 크기, 문자가 많아 문자열이 밑으로 넘어갈때 이것을 더 높여주면 됨(원래는 250px)*/
+            height: 150px;
+        }
+
+
+        .control_panel {
+            position: absolute;
+            top: 380px;
+            left: 270px;
+            height: 13px;
+            overflow: hidden;
+        }
+        .control_button {
+            font-size: 11px;
+            width: 12px; /*글씨 배경의 크기 즉, fontSize가 이 크기를 넘어가면 글씨 잘림*/
+            height: 46px; /*문자간 간격*/
+            position: relative;
+            float: left;
+            cursor: pointer;
+            /*background: url('point_button.png');*/ /*버튼으로 해보자*/
+        }
+        .control_button:hover {top: -16px;}
+        .control_button.active {top: -31px;}
+    </style>
+
+    <script src="jquery-3.3.1.js"></script><!--jQuery-->
+    <script src="chapter18.js"></script><!--javaScript파일 외부 참조-->
+</head>
+
+<body>
+    <h1>Test String</h1>
+    <div class="animation_canvas">
+
+        <div class="slider_panel">
+            <img class="slider_image" src="image1.JPG" />
+            <img class="slider_image" src="image2.JPG" />
+            <img class="slider_image" src="image3.JPG" />
+            <img class="slider_image" src="image4.JPG" />
+            <img class="slider_image" src="image5.JPG" />
+        </div>
+
+        <div class="slider_text_panel">
+            <div class="slider_text">
+                <h1>문자열1</h1>
+                <p id="first">여기는 영국 라벤더 꽃밭</p>
+            </div>
+            <div class="slider_text">
+                <h1>문자열2</h1>
+                <p>여기는 노르웨이 오슬로 공원</p>
+            </div>
+            <div class="slider_text">
+                <h1>문자열3</h1>
+                <p>여기는 노르웨이 오슬로 바닷가</p>
+            </div>
+            <div class="slider_text">
+                <h1>문자열4</h1>
+                <p>여기는 영국 브라이턴 세븐시스터즈</p>
+            </div>
+            <div class="slider_text" id="five">
+                <h1>문자열5</h1>
+                <p>여기는 노르웨이 오슬로 성벽</p>
+            </div>
+        </div>
+
+        <div class="control_panel">
+            <div class="control_button">●</div>
+            <div class="control_button">●</div>
+            <div class="control_button">●</div>
+            <div class="control_button">●</div>
+            <div class="control_button">●</div>
+        </div>
+
+    </div>
+    <h1>Test String</h1>
+</body>
+
+</html>

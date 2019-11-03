@@ -1,0 +1,21 @@
+J(document).ready(function () {
+    J('#all-check').change(function(){
+        if(this.checked){
+            J('#check-item').children().prop('checked', true);
+        } else{
+            J('#check-item').children().prop('checked', false);
+        }
+
+    })
+});
+
+<input type="checkbox" id="all-check" />
+    <label>All</label>
+    <div id="check-item">
+        <input type="checkbox"/>
+        <label>A Option</label>
+        <input type="checkbox"/>
+        <label>B Option</label>
+        <input type="checkbox"/>
+        <label>C Option</label>
+    </div>

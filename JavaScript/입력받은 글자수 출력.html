@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+    
+$.noConflict();
+var J = jQuery;
+
+J(document).ready(function () {
+
+    J('textarea').keyup(function () {
+        var inputLength = J(this).val().length;
+        var remain = 150 - inputLength;
+
+        setTimeout(function () {
+            J('h1').html(remain);
+        }, 500)
+    });
+});
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>글자를 입력하세요</p>
+        <h1>150</h1>
+        <textarea class="good" cols="70" rows="5"></textarea>
+    </div>
+</body>
+
+</html>

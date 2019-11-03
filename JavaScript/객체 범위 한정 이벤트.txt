@@ -1,0 +1,42 @@
+$.noConflict();
+var J = jQuery;
+
+J(document).ready(function () {
+
+    J('div').click(function(){ // context
+        var header = J('h1', this).text(); // this --> h1 태그만 한정(this = context)
+        var paragraph = J('p', this).text();
+
+        alert(header + '\n' + paragraph);
+    })
+
+});
+
+ <div> <!--context 태그 범위 한정-->
+        <h1>문자열1</h1>
+        <p>paragraph</p>
+    </div>
+    <div>
+        <h1>문자열2</h1>
+        <p>paragraph</p>
+    </div>
+    <div>
+        <h1>문자열3</h1>
+        <p>paragraph</p>
+    </div>
+</body>
+
+J(document).ready(function () {
+    J('#wrap').on('click', 'h1', function(){ // 상위 태그 애매하면 '#wrap' -> document
+        var length = J('h1').length;
+        var targetHTML = J(this).html();
+
+        J('#wrap').append('<h1>' + length + '-' + targetHTML + '</h1>');
+    })
+
+    //J('#wrap').off('click', 'h1');
+});
+
+<div id="wrap"> <!--메서드 연결 범위 한정-->
+        <h1>문자열</h1>
+    </div>
