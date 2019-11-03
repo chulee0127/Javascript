@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message</title>
+
+    <script src="jquery-3.3.1.js"></script>
+
+    <script>
+        $.noConflict(); // 충돌 방지 Prototype 프레임워크 식별자($)와 겹침
+        var J = jQuery;
+
+        J(function () {
+            J('#write_form').submit(function (event) {
+                J.post('/messages', J(this).serialize());
+
+                event.preventDefault();
+            });
+
+            setInterval(function () {
+                J.getJSON('/messages', {
+                    dummy: new Date().getTime()
+                }, function (data) {
+                    J('#output2').empty();
+
+                    J.each(data, function (index, item) {
+                        var output = '';
+                        output += '<h2>' + item.name + '</h2>';
+                        output += '<p>' + item.content + '</p>';
+                        J('<div></div>').html(output).prependTo('#output2');
+                    });
+                });
+            }, 1000);
+        });
+        </script>
+</head>
+<body>
+        <form id="write_form">
+                <table>
+                    <tr>
+                        <td>닉네임</td>
+                        <td><input type="text" name="name"/></td>
+                    </tr>
+                    <tr>
+                        <td>메시지</td>
+                        <td><textarea name="content"></textarea></td>
+                    </tr>
+                </table>
+                <input type="submit" value="글쓰기"/>
+            </form>
+            <hr/>
+            <div id="output2">
+        
+            </div>
+</body>
+</html>

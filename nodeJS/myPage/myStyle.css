@@ -1,0 +1,118 @@
+/* * {margin: 0px; padding: 0px;} 책에서 이거 왜 한거지??*/
+
+#logIn{ position: absolute; display: inline; left: 1400px; margin: 5px; padding: 2px; top: 5px; font-size: 14px; }
+
+.title{ text-align: center; position: relative; margin: 20px; padding: 30px; top: 35px; font-size: 50px; } 
+
+.mouseEvent{ color: black; }
+.mouseEvent2{ color: springgreen; }
+
+#noticeBlock{ position: relative; left: 1300px; top: -380px; }
+
+section#main{ display: table-cell; position: relative; padding: 30px; margin: 30px; left: 380px; top: 30px; }
+
+#navi{ color: white; background-color: black; position: relative; text-align: center;
+       top: 50px; padding: 17px; margin: 0px; border-radius: 25px; letter-spacing: 2px; /* 글자 간격 */ }
+
+.menubar p{
+    display: inline;
+    border: 2px;
+    border-color: ivory;
+    margin: 50px;
+    padding: 10px;
+    position: relative;
+    top: -10px;
+    border-top-style: solid;
+    border-right-style: dashed;
+    border-left-style: dashed;
+    border-bottom-style: double;
+}
+
+#menuBar{
+    float: left;
+    text-decoration:underline;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    left: 450px;
+    font-size: 30px;
+}
+
+.asi{
+    /*display: table-cell;*/
+    float: left;
+    position: relative;
+    padding: 25px;
+    top: 90px;
+    left: 60px;
+}
+
+.categoryBox{
+    border: 2px dotted brown;
+    width: 300px;
+    height: auto;
+    resize: both;
+    overflow: auto;
+    padding: 12px;
+}
+
+footer{ font-style: italic; text-align: right; padding: 10px; margin: 0px 0px 0px 0px; font-size: 90%; }
+
+/* 여기서부터 이미지 슬라이드 */
+.animation_canvas {
+    overflow: hidden;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    left: -230px;
+}
+
+
+.slider_panel {
+    width: 3000px;
+    position: relative;
+}
+.slider_image {
+    float: left;
+    width: 600px;
+    height: 400px;
+}
+
+
+.slider_text_panel {
+    position: absolute;
+    top: 200px; /*문자열의 높이 조정*/
+    left: 50px;
+}
+.slider_text {
+    position: absolute;
+    width: 300px; /*글씨 배경의 크기, 문자가 많아 문자열이 밑으로 넘어갈때 이것을 더 높여주면 됨(원래는 250px)*/
+    height: 150px;
+}
+
+
+.control_panel {
+    position: absolute;
+    top: 380px;
+    left: 270px;
+    height: 13px;
+    overflow: hidden;
+}
+.control_button {
+    font-size: 11px;
+    width: 12px; /*글씨 배경의 크기 즉, fontSize가 이 크기를 넘어가면 글씨 잘림*/
+    height: 46px; /*문자간 간격*/
+    position: relative;
+    float: left;
+    cursor: pointer;
+    /*background: url('point_button.png');*/ /*버튼으로 해보자*/
+}
+
+.high-light-0{color: red; }
+.high-light-1{color: orange; }
+.high-light-2{color: yellow; }
+.high-light-3{color: green }
+.high-light-4{color: blue }
+
+.control_button:hover {top: -16px;}
+.control_button.active {top: -31px;}

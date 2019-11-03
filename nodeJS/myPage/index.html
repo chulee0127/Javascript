@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--줄정렬 : ctrl + k + f-->
+<!--이미지 시간에 맞춰서 자동으로 넘어가는 기능 + 버튼 선택, 로그인 기능, '작품들'에 마우스 이벤트x, 공지사항 페이지를 화면 위에 덮어쓰게 하는 방법-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kim-JungCheol</title>
+
+    <link type="text/css" rel="stylesheet" href="myStyle.css">
+
+    <script src="jquery-3.3.1.js"></script>
+    <script src="myPageJavaScript.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1 class="title"><a href="index.html" style="text-decoration: none; color: skyblue;">Blue sky</a></h1>
+        </div>
+    </header>
+
+    <span>
+        <form id="logIn">
+            <label for="ID">ID</label>
+            <input type="text" name="ID" id="ID" />
+
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass" />
+
+            <input type="submit" value="확인" />
+        </form>
+    </span>
+
+    <div id="navi">
+        <nav class="menubar">
+            <strong id="menuBar">MENU</strong><br>
+            <p class="Bar">게시판</p>
+            <p class="Bar"><a href="notice.html" target="iframe1" style="text-decoration: none; color: ivory">공지사항</a></p>
+            <p class="Bar"><a href="/works" style="text-decoration: none; color: ivory">작품들</a></p>
+        </nav>
+    </div>
+
+    <aside class="asi">
+        <div class="categoryBox">
+            <h3 style="text-align: center;">카테고리</h3>
+            <ul>
+                <li style="list-style-type: square;">사진</li>
+                <li style="list-style-type: square;">음악</li>
+                <li style="list-style-type: square;">동영상</li>
+                <li style="list-style-type: square;">지도</li>
+                <li style="list-style-type: square;"><a href="messages.html" style="text-decoration: none; color: black;">채팅</a></li>
+            </ul>
+            <div>
+                <h3 id="textNumber">150</h3>
+                <textarea class="good" cols="40" rows="5"></textarea>
+            </div>
+        </div>
+        <div id="noticeBlock">
+            <iframe class="iframe1" frameborder="0px" width="400" height="600" src="" name="iframe1"></iframe>
+        </div>
+    </aside>
+
+    <section id="main">
+        <article><P style="float:left; font-size: 25px; padding: 10px;">상단 문자열</P></article>
+
+        <article>
+            <div class="animation_canvas">
+                <div class="slider_panel">
+                    <img class="slider_image" src="image1.JPG" />
+                    <img class="slider_image" src="image2.JPG" />
+                    <img class="slider_image" src="image3.JPG" />
+                    <img class="slider_image" src="image4.JPG" />
+                    <img class="slider_image" src="image5.JPG" />
+                </div>
+
+                <div class="slider_text_panel">
+                    <div class="slider_text">
+                        <h1 style="color:white;">사진1</h1>
+                        <p style="color:white;">영국 라벤더 꽃밭</p>
+                    </div>
+                    <div class="slider_text">
+                        <h1>사진2</h1>
+                        <p>노르웨이 오슬로 공원</p>
+                    </div>
+                    <div class="slider_text">
+                        <h1 style="color:white;">사진3</h1>
+                        <p>노르웨이 오슬로 바닷가</p>
+                    </div>
+                    <div class="slider_text">
+                        <h1>사진4</h1>
+                        <p style="font-family:'Times New Roman', Times, serif">영국 브라이턴 세븐시스터즈</p>
+                    </div>
+                    <div class="slider_text">
+                        <h1 style="color:white;">사진5</h1>
+                        <p style="color:white;">노르웨이 오슬로 성벽</p>
+                    </div>
+                </div>
+
+                <div class="control_panel">
+                    <div class="control_button">●</div>
+                    <div class="control_button">●</div>
+                    <div class="control_button">●</div>
+                    <div class="control_button">●</div>
+                    <div class="control_button">●</div>
+                </div>
+            </div>
+        </article>
+
+        <article><P style="font-size: 25px; float: left; padding: 20px;">하단 문자열</P></article>
+    </section>
+
+    <footer><hr />김정철, Hello World!</footer>
+</body>
+</html>

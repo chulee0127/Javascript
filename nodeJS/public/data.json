@@ -1,0 +1,5 @@
+[
+    {"name": "우유", "price": 2000},
+    {"name": "홍차", "price": 3000},
+    {"name": "JSON", "price": 4000}
+]

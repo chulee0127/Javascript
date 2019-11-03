@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Page</title>
+
+    <style>
+        *{margin: 0px; padding: 0px;}
+        ul{list-style: none;}
+        img{width: 500px; height: 350px;}
+    </style>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script src="jquery.innerfade.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#inner-fade').innerfade({
+                animationtype: 'fade',
+                speed: 750,
+                timeout: 2000,
+                type: 'random',
+                containerheight: '350px'
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="inner-fade">
+        <li><img src="image1.JPG"/></li>
+        <li><img src="image2.JPG"/></li>
+        <li><img src="image3.JPG"/></li>
+        <li><img src="image4.JPG"/></li>
+        <li><img src="image5.JPG"/></li>
+    </ul>
+</body>
+</html>

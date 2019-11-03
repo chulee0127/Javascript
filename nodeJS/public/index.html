@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--index.html 파일명 변경x, index라는 파일을 제일 먼저 찾게 되어있음-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Ajax Basic</title>
+
+    <style>
+        #first {color: orange;}
+        #second {color: blueviolet;}
+    </style>
+    
+    <script src="jquery-3.3.1.js"></script>
+    <script src="nodeBasic.js"></script><!--get, post, put, delete 버튼, serialize, jQuery Ajax 스피너-->
+</head>
+
+<body>
+    <!--기본적인 값은 server.js에서 불러옴(연결이 복잡하다..)-->
+    <h2 id="first">GET, POST방식 기본</h2>
+    <div>
+        <form action="/products" method="GET">
+            <fieldset>
+                <legend>GET</legend>
+                <input type="submit" value="겟!!" />
+            </fieldset>
+        </form>
+    
+        <form action="/products" method="POST">
+            <fieldset>
+                <legend>POST</legend>
+                이름: <input type="text" name="name" /><br>
+                가격: <input type="text" name="price" /><br>
+                <input type="submit" value="포스트!!">
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <div>
+        <fieldset>
+            <legend>버튼 방식</legend>
+            <button id="get">GET</button>
+            <button id="post">POST</button>
+            <button id="put">PUT</button>
+            <button id="delete">DELETE</button>
+    
+            <h2>input</h2>
+            <ul>
+                <li>
+                    <label for="name">품목명</label>
+                    <input type="text" id="name" />
+                </li><br>
+                <li>
+                    품목가: <input id="price" />
+                </li>
+            </ul>
+            <h2>output</h2>
+            <textarea id="output" disabled="disabled" cols="40" rows="5"></textarea>
+        </fieldset>
+    </div>
+
+    <h2 id="second">serialize 메서드</h2>
+    <form id="my-form">
+        <table border="1">
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input id="name" name="name" type="text"/></td>
+            </tr>
+            <tr>
+                <td><label for="region">Region</label></td>
+                <td><input id="region" name="region" type="text"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="Get Ajax String"/>
+    </form>
+    <div id="wrap"> </div>
+
+    <br>
+    <form id="write_form">
+        <table>
+            <tr>
+                <td>닉네임</td>
+                <td><input type="text" name="name"/></td>
+            </tr>
+            <tr>
+                <td>메시지</td>
+                <td><textarea name="content"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit" value="글쓰기"/>
+    </form>
+    <hr/>
+    <div id="output2">
+
+    </div>
+
+    <!-- <div id="ajax-event"></div> 스피너!!-->
+    <!-- <div id="wrap2"></div> 스피너!!-->
+
+    <!--script태그 따로 있으면 js파일을 각각 만들어야하는지??-->
+    <!--
+    <h1>비동기 방식 XMLHttpRequest 객체</h1>
+    <script>
+        // 왜 json, xml이랑 같이 실행하면 화면에 안뜰까??
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function (event) {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+
+                    document.body.innerHTML += request.responseText;
+                };
+            };
+        };
+
+        request.open('GET', '/data.html', true); // 외부에서 HTML파일 불러옴
+        request.send();
+    </script>
+-->
+    <script>
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function (event) {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+
+                    var json = eval('(' + request.responseText + ')'); // var json = JSON.parse(request.responseText);, 구버전에서는 사용불가
+                    var output = '';
+
+                    for (var i = 0; i < json.length; i++) {
+                        for (var key in json[i]) {
+                            output += '<h2>' + i + ':' + json[i][key] + '</h2>';
+                        }
+                    }
+
+                    document.body.innerHTML += output;
+                };
+            };
+        };
+
+        request.open('GET', '/data.json', false); // 외부에서 JSON 파일 불러옴
+        request.send();
+    </script>
+<!--
+    <script>
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function (event) {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+
+                    var xml = request.responseXML;
+
+                    var names = xml.getElementsByTagName('name');
+                    var prices = xml.getElementsByTagName('price');
+
+                    for (var i = 0; i < names.length; i++) {
+                        var name = names[i].childNodes[0].nodeValue; // chileNodes가 뭐지??
+                        var price = prices[i].childNodes[0].nodeValue;
+
+                        document.body.innerHTML += '<h2>' + name + '</h2>';
+                        document.body.innerHTML += '<h3>' + price + '</h3>';
+                    }
+
+                }
+            };
+        };
+
+        request.open('GET', '/data.xml', true); // 외부에서 xml파일 불러옴
+        request.send();
+    </script>-->
+</body>
+</html>
